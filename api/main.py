@@ -7,6 +7,21 @@ from fastapi import FastAPI
 
 from api.routers.journal_router import router as journal_router
 
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.StreamHandler()  # console handler
+    ]
+)
+
+logger = logging.getLogger(__name__)
+
+# Test log message when app starts
+logger.info("Application started")
+
 
 # TODO: Setup basic console logging
 # Hint: Use logging.basicConfig() with level=logging.INFO
